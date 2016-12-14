@@ -2,7 +2,7 @@
 
 open Suave
 
-type Image = byte []
+type Model = int[] -> int
 
 type Model = Image -> int
 

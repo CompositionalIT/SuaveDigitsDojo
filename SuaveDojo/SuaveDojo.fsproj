@@ -61,6 +61,9 @@
     <None Include="Test.fsx" />
     <None Include="App.config" />
     <Content Include="packages.config" />
+    <Content Include="trainingsample.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="FSharp.Core">

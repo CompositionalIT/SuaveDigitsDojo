@@ -13,10 +13,8 @@ let downloadImage (url:string) =
     new Bitmap(img, 28, 28)
 
 let convertImageToBytes (img:Bitmap) =
-    let ms = new MemoryStream()
-    img.Save(ms, Imaging.ImageFormat.Bmp)
-    ms.ToArray()
-    |> Array.map int
+    [| for y in 0..27 do for x in 0..27 do yield img.GetPixel(x, y) |]
+    |> Array.map (fun c -> (0.3 * (float c.R) + 0.59 * (float c.G) + 0.11 * (float c.B)) |> int)
 
 let retrieveUrlFromQueryString (request:HttpRequest) =
     let url = request.queryParam "image"
