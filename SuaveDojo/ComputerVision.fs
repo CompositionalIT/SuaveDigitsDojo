@@ -4,8 +4,6 @@ open Suave
 
 type Model = int[] -> int
 
-type Model = Image -> int
-
 let retrieveModel () =
     //TODO: We need to build up a model here which is capable of classifying an image
     //We need to return a function which given an array of bytes returns an integer which it believes is the content of the byte array
