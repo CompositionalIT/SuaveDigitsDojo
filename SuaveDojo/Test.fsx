@@ -6,4 +6,5 @@ let classifyImage (url:string) =
     let wc = new WebClient()
     wc.DownloadString(query)
 
+//TODO: Now call your web API and try and classify an image at a given URL
 classifyImage "http://test.com/image.jpg"

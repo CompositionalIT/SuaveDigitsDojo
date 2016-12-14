@@ -16,6 +16,7 @@ let convertImageToBytes (img:Bitmap) =
     let ms = new MemoryStream()
     img.Save(ms, Imaging.ImageFormat.Bmp)
     ms.ToArray()
+    |> Array.map int
 
 let retrieveUrlFromQueryString (request:HttpRequest) =
     let url = request.queryParam "image"
