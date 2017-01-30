@@ -6,9 +6,11 @@ open Suave.Filters
 open Suave.Operators
 open Suave.Successful
 open ComputerVision
+open Spam
 
 let webApp classifier = choose [
     path "/classify" >=> request (fun r -> OK (classifyImage classifier r))
+    path "/check-spam" >=> request (fun r -> OK (checkSpam r))
     RequestErrors.NOT_FOUND "Could not find a path which matches the provided route"
 ]
 
